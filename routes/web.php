@@ -45,9 +45,9 @@ Route::match(['get', 'post'],'/rutagetpost', function () {
     return ('Acceso por GET y POST indistintamente');
 });
 Route::get('numeros/{numero}', function ($numero) {
-    return('introducidos dos numeros');
-})->where('numero', '[0-9]{2}');
+    return('introducidos solo numeros');
+})->where('numero', '[0-9]+');
 
-Route::get('numerosletras/{letras}/{numeros}', function ($letras,$numeros) {
+Route::get('letrasnumeros/{letras}/{numeros}', function ($letras,$numeros) {
     return('dos parámetros, el primero solo letras y el segundo solo números');
 })->where(['letras'=>'[A-Za-z]+','numeros'=>'[0-9]+']);
