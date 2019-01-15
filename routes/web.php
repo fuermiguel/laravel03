@@ -12,9 +12,27 @@
 */
 
 Route::get('/', function () {
-    return view('home',array('mensaje'=>'Esta es mi primera vista en laravel'));
-});
-Route::get('/fecha', function () {
     
-    return view('fecha',array('dia'=>date("d"),'mes'=>date("F"),'año'=>date("Y")));
+    return view('home');
 });
+Route::get('auth/login', function () {
+    
+    return view('/auth/login',array());
+});
+Route::get('catalog', function () {
+    
+    return view('/catalog/index',array());
+});
+Route::get('catalog/show/{id}', function ($id) {
+    
+    return view('catalog/show', array('id'=>$id));
+});
+Route::get('catalog/create', function () {
+    
+    return view('catalog/create');
+});
+Route::get('catalog/edit/{id}', function ($id) {
+    
+    return view('catalog/edit',array('id'=>$id));
+});
+
