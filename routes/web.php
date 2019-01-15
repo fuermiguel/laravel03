@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('home',array('mensaje'=>'Esta es mi primera vista en laravel'));
 });
+Route::get('/fecha', function () {
+    
+    return view('fecha',array('dia'=>date("d"),'mes'=>date("F"),'año'=>date("Y")));
+});
