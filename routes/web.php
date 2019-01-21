@@ -20,5 +20,5 @@ Route::get('auth/login', function () {
 Route::get('catalog', 'CatalogController@getIndex');
 Route::get('catalog/show/{id}', 'CatalogController@getShow');
 Route::get('catalog/create', 'CatalogController@getCreate');
-Route::get('catalog/edit/{id}', 'CatalogControler@getEdit');
+Route::get('catalog/edit/{id}', 'CatalogController@getEdit');
 
