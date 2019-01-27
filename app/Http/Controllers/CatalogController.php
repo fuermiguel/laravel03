@@ -10,7 +10,8 @@ class CatalogController extends Controller
   
     //Creamos las funciones llamadas desde las rutas
     function getIndex(){
-        return view('/catalog/index')->with('arrayClientes',$this->arrayClientes);
+        var_dump(Cliente::all());
+        //return view('/catalog/index')->with('arrayClientes',Cliente::all());
     }
 
     function getShow($id){
