@@ -8,14 +8,14 @@ class DatabaseSeeder extends Seeder
     private $arrayClientes = array(
         array(
             'nombre' =>'Neo',
-            'imagen' =>'Imagen personalizada de la felicitación',
+            'imagen' =>'neo.jpg',
             'fecha_nacimiento' => '06/01/1972',
             'correo' => 'neo@matrix.org'
             
         ),
         array(
             'nombre' =>'Morfeo',
-            'imagen' =>'Imagen personalizada de la felicitación',
+            'imagen' =>'morfeo.jpg',
             'fecha_nacimiento' =>'05/03/1997',
             'correo' => 'morfeo@matrix.org'
 
