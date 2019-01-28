@@ -8,11 +8,13 @@ use App\Cliente;
 class CatalogController extends Controller
 {
     //Definimos las variables
+
   
     //Creamos las funciones llamadas desde las rutas
     function getIndex(){
         var_dump(Cliente::all());
         //return view('/catalog/index')->with('arrayClientes',Cliente::all());
+   
     }
 
     function getShow($id){
@@ -23,10 +25,10 @@ class CatalogController extends Controller
 
     function getCreate(){
 
-        return view('catalog/create');
+        return view('catalog.create');
     }
 
     function getEdit($id){
-        return view('catalog/edit')->with('id',$id);
+        return view('catalog.edit')->with('id',$id);
     }
 }
