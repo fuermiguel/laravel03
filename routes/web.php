@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@getHome');
+Route::get('/', 'HomeController@index');
 
 Route::get('auth/login', function () {
     
@@ -22,3 +22,7 @@ Route::get('catalog/show/{id}', 'CatalogController@getShow');
 Route::get('catalog/create', 'CatalogController@getCreate');
 Route::get('catalog/edit/{id}', 'CatalogController@getEdit');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

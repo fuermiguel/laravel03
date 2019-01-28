@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Cliente;
+use App\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -29,7 +30,9 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         self::seedCatalog(); //accediendo al método desde el interior de la definición de la clase
-        $this->command->info('Tabla cliente inicializda con datos!');
+        $this->command->info('Tabla cliente inicializada con datos!');
+        self::seedUsers();
+        $this->command->info('Tabla Usuarios inicializada con datos!');
     }
 
     private function seedCatalog(){
@@ -43,5 +46,14 @@ class DatabaseSeeder extends Seeder
             $c->correo=$cliente['correo'];
             $c->save();
         }
+    }
+
+    private function seedUsers() {
+        DB::table('users')->delete();
+            $u = new User();
+            $u->name='miguel';
+            $u->email='fuermiguel@yahoo.es';
+            $u->password= bcrypt('A1981971');
+            $u->save();
     }
 }
