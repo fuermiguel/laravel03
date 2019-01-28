@@ -36,10 +36,10 @@ class CatalogController extends Controller
 
     function getCreate(){
 
-        return view('catalog/create');
+        return view('catalog.create');
     }
 
     function getEdit($id){
-        return view('catalog/edit')->with('id',$id);
+        return view('catalog.edit')->with('id',$id);
     }
 }
