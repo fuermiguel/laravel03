@@ -10,21 +10,22 @@ class CatalogController extends Controller
     private $arrayClientes = array(
         array(
             'nombre' =>'Neo',
-            'imagen' =>'Imagen personalizada de la felicitación',
+            'imagen' =>'neo.jpg',
             'fecha_nacimiento' => '06/01/1972',
             'correo' => 'neo@matrix.org'
             
         ),
         array(
             'nombre' =>'Morfeo',
-            'imagen' =>'Imagen personalizada de la felicitación',
+            'imagen' =>'morfeo.jpg',
             'fecha_nacimiento' =>'05/03/1997',
             'correo' => 'morfeo@matrix.org'
 
     ));
     //Creamos las funciones llamadas desde las rutas
     function getIndex(){
-        return view('/catalog/index')->with('arrayClientes',$this->arrayClientes);
+        //Puedo usar el . en sustituciónd de /
+        return view('catalog.index')->with('arrayClientes',$this->arrayClientes);
     }
 
     function getShow($id){
