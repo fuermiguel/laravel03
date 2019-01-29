@@ -10,6 +10,11 @@ class CatalogController extends Controller
 {
     //Definimos las variables
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
   
     //Creamos las funciones llamadas desde las rutas
     function getIndex(){
