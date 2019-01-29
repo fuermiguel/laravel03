@@ -7,18 +7,18 @@
 <div class="col-sm-4">
 
     {{-- TODO: Imagen del cliente --}}
-    <img src="{{asset("img/".$cliente['imagen'])}}" style="height:200px"/>
+    <img src="{{asset("img/".$cliente->imagen)}}" style="height:200px"/>
 
 </div>
 <div class="col-sm-8">
 
     {{-- TODO: Datos del cliente --}}
-    <h2>{{$cliente['nombre']}}</h2>
-    <p>{{$cliente['correo']}}<p>
-    <p>{{$cliente['fecha_nacimiento']}}</p>
+    <h2>{{$cliente->nombre}}</h2>
+    <p>{{$cliente->correo}}<p>
+    <p>{{$cliente->echa_nacimiento}}</p>
    
-    <a href="#" class="btn btn-warning" role="button">Editar</a>
-    <a href="#" class="btn btn-primary" role="button">Volver</a>
+    <a href="{{url('/catalog/edit/'.$cliente->id)}}" class="btn btn-warning" role="button">Editar</a>
+    <a href="{{url('/catalog')}}" class="btn btn-primary" role="button">Volver</a>
 </div>
 </div>
 
