@@ -12,11 +12,6 @@
 */
 
 Route::get('/', 'HomeController@index');
-
-Route::get('auth/login', function () {
-    
-    return view('/auth/login',array());
-});
 Route::get('catalog', 'CatalogController@getIndex');
 Route::get('catalog/show/{id}', 'CatalogController@getShow');
 Route::get('catalog/create', 'CatalogController@getCreate');
