@@ -11,7 +11,7 @@
          <div class="card-body" style="padding:30px">
 
             {{-- TODO: Abrir el formulario e indicar el método POST --}}
-            <form enctype="multipart/form-data" action="#" method="POST">
+            <form enctype="multipart/form-data" action="CatalogController@putEdit" method="POST">
 
              <!--    <input type="hidden" name="_method" value="PUT"> -->
                 {{ method_field('PUT') }}
@@ -22,25 +22,25 @@
 
             <div class="form-group">
                <label for="nombre">Nombre</label>
-               <input type="text" name="nombre" id="nombre">
+               <input type="text" name="nombre" id="nombre" value="{{$cliente->nombre}}">
             </div>
 
             <div class="form-group">
                {{-- TODO: Completa el input para la imagen --}}
                 <label for="imagen">Sube la imagen:</label>
-                <input type="text" name="imagen" id="imagen">
+                <input type="text" name="imagen" id="imagen" value="{{$cliente->imagen}}">
             </div>
 
             <div class="form-group">
                {{-- TODO: Completa el input para el fecha de nacimiento --}}
                 <label for="fechaNacimiento">Fecha de nacimiento:</label>
-                <input type="date" name="fechaNacimiento" id="fechaNacimiento">
+                <input type="date" name="fechaNacimiento" id="fechaNacimiento" value="{{$cliente->fecha_nacimiento}}">
             </div>
 
             <div class="form-group">
                {{-- TODO: Completa el input para el correo --}}
                <label for="correo">Correo electrónico:</label>
-                <input type="email" name="correo" id="correo">
+                <input type="email" name="correo" id="correo" value="{{$cliente->correo}}">
            
             </div>
            

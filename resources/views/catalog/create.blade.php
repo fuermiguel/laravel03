@@ -11,15 +11,16 @@
          <div class="card-body" style="padding:30px">
 
             {{-- TODO: Abrir el formulario e indicar el método POST --}}
-            <form action="/foo/bar" method="POST">
+            <form method="POST" action="{{url("catalog/create")}}" enctype =  "multipart/form-data">
+      <!--  <form method="POST" action="CalalogController@postCreate" enctype = "multipart/form-data">-->
 
             {{-- TODO: Protección contra CSRF --}}
             {{ csrf_field() }}
 
             <div class="form-group">
             {{-- TODO: Completa el input para la nombren --}}
-               <label for="title">Nombre</label>
-               <input type="text" name="title" id="title">
+               <label for="nombre">Nombre</label>
+               <input type="text" name="nombre" id="nombre">
             </div>
 
             <div class="form-group">
