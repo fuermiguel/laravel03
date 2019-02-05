@@ -7,7 +7,7 @@
 <div class="col-sm-4">
 
     {{-- TODO: Imagen del cliente --}}
-    <img src="{{$cliente->imagen}}" style="height:200px"/>
+    <img src="{{asset($cliente->imagen)}}" style="height:200px"/>
 
 </div>
 <div class="col-sm-8">

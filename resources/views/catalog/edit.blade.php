@@ -20,6 +20,10 @@
             {{-- TODO: Protección contra CSRF --}}
                {{ csrf_field() }}
 
+            <div class="form-group" style='display:none'>
+               <input type="text" name="id" id="id" value="{{$cliente->id}}">
+            </div>
+
             <div class="form-group">
                <label for="nombre">Nombre</label>
                <input type="text" name="nombre" id="nombre" value="{{$cliente->nombre}}">
@@ -28,7 +32,7 @@
             <div class="form-group">
                {{-- TODO: Completa el input para la imagen --}}
                 <label for="imagen">Sube la imagen:</label>
-                <input type="file" name="imagen" id="imagen" value="{{$cliente->imagen}}">
+                <input type="file" name="imagen" id="imagen" value="">
             </div>
 
             <div class="form-group">

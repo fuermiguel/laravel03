@@ -76,7 +76,30 @@ class CatalogController extends Controller
         //El método findOrFail  es usado cuando queremos una exception si el modelo no es encontrado
     }
 
-    function putEdit(Request $request){
+    function putEdit(Request $request, Cliente $c  ){
+      // dd($request->id);
+    
+       //Con el identificador lo busco 
+       $c = Cliente::findOrFail($request->id);
 
+       //si no hay imagen no hago nada
+       //Borrar la imagen anterior
+       //si hay imagen la pongo el campo imagen y la guardo
+       
+       //Actualizo sus campos
+        $c->nombre=$request->nombre;
+
+        if($request->file('imagen')){
+
+            Storage::delete('img',$c->imagen);
+            $c->imagen = $request->file('imagen')->storeAs('img',$c->nombre . '.jpg') ;//Recuperamos el fichero y lo almacenamos
+           
+        }
+        $c->fecha_nacimiento=$request->fechaNacimiento;
+        $c->correo=$request->correo;
+       //Guardo
+       $c->save();
+        //Después de salvarlo lo vemos en /catalog
+        return redirect('/catalog');
     }
 }
