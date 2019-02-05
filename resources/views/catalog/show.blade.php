@@ -15,7 +15,7 @@
     {{-- TODO: Datos del cliente --}}
     <h2>{{$cliente->nombre}}</h2>
     <p>{{$cliente->correo}}<p>
-    <p>{{$cliente->fecha_nacimiento}}</p>
+    <p>{{date('d-m-Y', strtotime($cliente->fecha_nacimiento))}}</p>
    
     <a href="{{url('/catalog/edit/'.$cliente->id)}}" class="btn btn-warning" role="button">Editar</a>
     <a href="{{url('/catalog')}}" class="btn btn-primary" role="button">Volver</a>

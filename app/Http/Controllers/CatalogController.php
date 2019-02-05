@@ -25,7 +25,6 @@ class CatalogController extends Controller
     }
 
     function getShow($id){
-        //!!!!!!!!!!!Tener cuidado con el id , porque las funciones del orm empiezan por uno
         //Esto queda corregido al cambiar el indice del array por el indice del propio objeto cliente
         return view('catalog.show')->with('cliente',Cliente::findOrFail($id));
         //El método findOrFail  es usado cuando queremos una exception si el modelo no es encontrado
@@ -54,15 +53,14 @@ class CatalogController extends Controller
         if($request->file('imagen')){
            
             $c->imagen = $request->file('imagen')->storeAs('img',$c->nombre . '.jpg') ;//Recuperamos el fichero y lo almacenamos
-           // dd($c->imagen);
         }
 
-        $c->fecha_nacimiento =  $request->input('fechaNacimiento');
+        //La fecha la guardamos en formato y/m/d para que lo maneje bien el input type=date
+      
+        $c->fecha_nacimiento = $request->input('fechaNacimiento');
+
         $c->correo =  $request->input('correo');//$request->correo (también es posible)
        
-        //Almacenamos la imagen en el servidor carpeta public/img
-    
-
        
         //Salvamos cliente a la base de datos
         $c->save();

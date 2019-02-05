@@ -18,7 +18,7 @@
     
 
             {{-- TODO: Protección contra CSRF --}}
-            {{ csrf_field() }}
+               {{ csrf_field() }}
 
             <div class="form-group">
                <label for="nombre">Nombre</label>
@@ -28,13 +28,13 @@
             <div class="form-group">
                {{-- TODO: Completa el input para la imagen --}}
                 <label for="imagen">Sube la imagen:</label>
-                <input type="text" name="imagen" id="imagen" value="{{$cliente->imagen}}">
+                <input type="file" name="imagen" id="imagen" value="{{$cliente->imagen}}">
             </div>
 
             <div class="form-group">
                {{-- TODO: Completa el input para el fecha de nacimiento --}}
                 <label for="fechaNacimiento">Fecha de nacimiento:</label>
-                <input type="date" name="fechaNacimiento" id="fechaNacimiento" value="{{$cliente->fecha_nacimiento}}">
+                <input type="date" name="fechaNacimiento" id="fechaNacimiento" value= "{{date('Y-m-d', strtotime($cliente->fecha_nacimiento))}}" >
             </div>
 
             <div class="form-group">
