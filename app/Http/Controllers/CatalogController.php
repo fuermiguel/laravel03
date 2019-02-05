@@ -77,7 +77,6 @@ class CatalogController extends Controller
     }
 
     function putEdit(Request $request, Cliente $c  ){
-      // dd($request->id);
     
        //Con el identificador lo busco 
        $c = Cliente::findOrFail($request->id);
@@ -101,5 +100,18 @@ class CatalogController extends Controller
        $c->save();
         //Después de salvarlo lo vemos en /catalog
         return redirect('/catalog');
+    }
+
+    function putDelete(Request $request, $id, Cliente $c){
+       
+        //Buscamos el cliente
+        $c = Cliente::findOrFail($id);
+        //Borramos la imagen del disco
+        Storage::delete('img',$c->imagen);
+        //Borramos el cliente
+        $c->delete();
+        //Después de borrar volvemos a  /catalog
+        return redirect('/catalog');
+
     }
 }

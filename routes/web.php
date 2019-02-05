@@ -26,6 +26,8 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('catalog/edit/{id}', 'CatalogController@getEdit');
     Route::put('catalog/edit/{id}', 'CatalogController@putEdit');
 
+    Route::delete('catalog/delete/{id}','CatalogController@putDelete');
+
    
 
 });
